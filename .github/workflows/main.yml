@@ -1,7 +1,7 @@
 on:
   issues:
     types:
-      - opened
+      - closed
 
 jobs:
   label_issue:
@@ -11,4 +11,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
         run: |
-          gh issue edit $ISSUE_URL --repo ${{ github.repository }} --add-label "bug"
+          gh issue edit $ISSUE_URL --repo ${{ github.repository }} --add-label "documentation"
